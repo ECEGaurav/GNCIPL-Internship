@@ -1,0 +1,279 @@
+/* --- Global & General Styles --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(120deg, #f0f4f8, #e0e7ff);
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    color: #3f6fcf;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #1e3a8a;
+    text-decoration: underline;
+}
+
+hr {
+    border: 0;
+    border-top: 2px solid #ccc;
+    width: 80%;
+    margin: 40px auto;
+}
+
+/* --- Typography --- */
+h1 {
+    text-align: center;
+    background: linear-gradient(90deg, #6a9ff5, #98b5f4);
+    color: white;
+    padding: 25px 10px;
+    border-radius: 0 0 15px 15px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+h1:hover {
+    transform: scale(1.03);
+}
+
+h2 {
+    text-align: center;
+    color: #3f6fcf;
+    margin: 30px 0 15px;
+    font-size: 28px;
+    position: relative;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #3f6fcf;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+section p {
+    max-width: 500px;
+    margin: 15px auto;
+    padding: 0 15px;
+    font-size: 18px;
+    text-align: center;
+}
+
+p:last-of-type {
+    text-align: center;
+    margin: 40px 0 20px;
+    font-style: italic;
+    color: #555;
+}
+
+/* --- About Me Section (Updated styles) --- */
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 180px;
+    border-radius: 5px;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.05);
+}
+
+.about-text p {
+    text-align: left;
+    margin: 0;
+}
+
+/* --- Hobbies List (New styles) --- */
+#hobbies ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#hobbies li {
+    background: #f8f9fa;
+    border: 1px solid #e0e7ff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    color: #555;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#hobbies li:hover {
+    background: #e0e7ff;
+    transform: translateY(-3px);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+#hobbies li::before {
+    content: "✔️ ";
+    color: #3f6fcf;
+    font-weight: bold;
+}
+
+/* --- Forms --- */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+    50% {
+        box-shadow: 0 5px 25px rgba(63,111,207,0.2);
+    }
+    100% {
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+}
+
+form {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 25px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: pulse 4s infinite ease-in-out;
+}
+
+form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: #3f6fcf;
+    box-shadow: 0 0 5px rgba(63,111,207,0.5);
+    outline: none;
+}
+
+button {
+    display: inline-block;
+    background: #3f6fcf;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: #2c50a1;
+    transform: translateY(-2px);
+}
+
+/* --- Project Cards --- */
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project-card {
+    max-width: 300px;
+    background: #fff;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    text-align: left;
+    border: 1px solid transparent;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    border: 1px solid #3f6fcf;
+}
+
+.project-card h3 {
+    color: #3f6fcf;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 28px;
+        padding: 20px 10px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    section p, ul, ol {
+        font-size: 16px;
+    }
+
+    .project-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-text p {
+        text-align: center;
+        margin-top: 20px;
+    }
+}
