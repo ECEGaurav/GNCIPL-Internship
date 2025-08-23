@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="style.css"/>
+    <title>Movie website |  Landing Page</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">!Movies</a>
+        <ul class="nav">
+            <li>
+                <a href="#"><i class="fa fa-home" aria-hidden="true"></i></a>
+            </li>
+            <li><a href="#">Adults</a></li>
+            <li><a href="#">Kids</a></li>
+            <li><a href="#">Trend</a></li>
+            <li><a href="#">My List</a></li>
+        </ul>
+        <div class="search">
+            <input type="text" placeholder="Search"/>
+            <i class="fa fa-search" aria-hidden="true"></i>
+        </div>
+    </header>
+    <div class="banner">
+        <div class="carousel-box">
+            <div class="carousel">
+                <div class="carousel-item" onclick="changeBg('bg-peaky-blinders.jpg', 'peaky-blinders');">
+                    <img src="images/peaky-blinders.jpg" alt="" />
+                </div>
+                <div class="carousel-item" onclick="changeBg('bg-andor-back.jpg', 'andor-front');">
+                    <img src="images/andor-front.jpg" alt="" />
+                </div>
+                <div class="carousel-item" onclick="changeBg('bg-f1-back.jpg', 'f1-front');">
+                    <img src="images/f1-front.jpg" alt="" />
+                </div>
+                <div class="carousel-item" onclick="changeBg('bg-brave-back.jpg', 'brave-front');">
+                    <img src="images/brave-front.jpeg" alt="" />
+                </div>
+                <div class="carousel-item" onclick="changeBg('bg-snow-white-back.png', 'snow-white-front');">
+                    <img src="images/snow-white-front.jpeg" alt="" />
+                </div>
+            </div>
+        </div>
+        <ul class="sci">
+            <li>
+                <a href="https://www.youtube.com" target="_blank">
+                     <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                </a>
+                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            </li>
+        </ul>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://kit.fontawesome.com/fd50954167.js" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $('.carousel').carousel();
+        });
+    </script>
+</body>
+</html>
