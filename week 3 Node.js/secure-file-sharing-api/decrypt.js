@@ -1,24 +1,37 @@
-const fs = require('fs');
 const crypto = require('crypto');
+const fs = require('fs');
 
-// Usage: node decrypt.js encrypted.enc decrypted.txt <key> <iv>
-const [,, inputFile, outputFile, keyHex, ivHex] = process.argv;
+function decryptFile(inputPath, outputPath, keyHex, ivHex) {
+    const algorithm = 'aes-256-ctr';
 
-if (!inputFile || !outputFile || !keyHex || !ivHex) {
-  console.error("Usage: node decrypt.js <inputFile> <outputFile> <keyHex> <ivHex>");
-  process.exit(1);
+    // Convert hex strings to Buffers
+    const key = Buffer.from(keyHex, 'hex');
+    const iv = Buffer.from(ivHex, 'hex');
+
+    const decipher = crypto.createDecipheriv(algorithm, key, iv);
+
+    const input = fs.createReadStream(inputPath);
+    const output = fs.createWriteStream(outputPath);
+
+    input.pipe(decipher).pipe(output);
+
+    output.on('finish', () => {
+        console.log(`✅ File decrypted and saved to: ${outputPath}`);
+    });
+
+    output.on('error', (err) => {
+        console.error('❌ Decryption failed:', err);
+    });
 }
 
-const algorithm = 'aes-256-ctr';
-const key = Buffer.from(keyHex, 'hex');
-const iv = Buffer.from(ivHex, 'hex');
+// CLI usage
+if (require.main === module) {
+    const [,, encryptedFile, outputFile, keyHex, ivHex] = process.argv;
 
-const decipher = crypto.createDecipheriv(algorithm, key, iv);
-const input = fs.createReadStream(inputFile);
-const output = fs.createWriteStream(outputFile);
+    if (!encryptedFile || !outputFile || !keyHex || !ivHex) {
+        console.error('Usage: node decrypt.js <encryptedFile> <outputFile> <keyHex> <ivHex>');
+        process.exit(1);
+    }
 
-input.pipe(decipher).pipe(output);
-
-output.on('finish', () => {
-    console.log(`✔ File decrypted: ${outputFile}`);
-});
+    decryptFile(encryptedFile, outputFile, keyHex, ivHex);
+}
