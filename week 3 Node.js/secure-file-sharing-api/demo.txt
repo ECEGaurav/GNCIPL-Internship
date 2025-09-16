@@ -1,7 +1,1 @@
-The GitHub repository GNCIPL-Internship
-
-Week 1: HTML, CSS, JavaScript
-
-Week 2: React.js with an AI Chatbot
-
-Week 3: Node.js for a secure file-sharing API
+hello,lsdkodk
