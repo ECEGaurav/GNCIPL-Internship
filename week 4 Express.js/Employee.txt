@@ -1,0 +1,15 @@
+Employee
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4Yzk2ZWRhMzUwOTRjMGUzZDQzMDBhNSIsImlhdCI6MTc1ODAzMTU3OCwiZXhwIjoxNzU4NjM2Mzc4fQ.l8pwq20wnkzGwXp82FnCXESQzBia4AshfY5XXpv5QX8"
+}
+
+
+Employee login
+
+
+Admin
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4Yzk2ZWZjMzUwOTRjMGUzZDQzMDBhOCIsImlhdCI6MTc1ODAzMTYxMiwiZXhwIjoxNzU4NjM2NDEyfQ.i0cT8jsediS_ha2vD7kwqv6YEpP-ubev1CEvS7H6UuE"
+}
